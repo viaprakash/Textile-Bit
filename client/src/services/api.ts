@@ -4,11 +4,10 @@ import { UploadedImage } from '../types/image';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
-// In production, image URLs from the server (like /api/uploads/xxx.png)
+// In production, image URLs from the server (like /api/files/xxx.png)
 // need to be prefixed with the server origin since client and server are on different domains.
 function resolveImageUrl(url: string): string {
   if (!url) return url;
-  // If VITE_API_URL is set (production), prefix relative URLs with the server origin
   if (import.meta.env.VITE_API_URL && url.startsWith('/api/')) {
     // VITE_API_URL is like "https://server.onrender.com/api", strip the /api suffix to get origin
     const serverOrigin = import.meta.env.VITE_API_URL.replace(/\/api\/?$/, '');

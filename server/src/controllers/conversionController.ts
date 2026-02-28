@@ -78,7 +78,7 @@ export async function convertImage(
     res.status(200).json({
       id: outputId,
       filename: outputFilename,
-      url: `/api/uploads/output/${outputFilename}`,
+      url: `/api/files/output/${outputFilename}`,
       width: metadata.width || 0,
       height: metadata.height || 0,
       format: 'png',
@@ -154,7 +154,7 @@ export async function enhanceAndUpscale(
     res.status(200).json({
       id: outputId,
       filename: outputFilename,
-      url: `/api/uploads/output/${outputFilename}`,
+      url: `/api/files/output/${outputFilename}`,
       width: metadata.width || 0,
       height: metadata.height || 0,
     });

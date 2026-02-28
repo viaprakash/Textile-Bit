@@ -27,7 +27,7 @@ export async function uploadImage(
       height: metadata.height || 0,
       size: req.file.size,
       mimeType: req.file.mimetype,
-      url: `/api/uploads/${req.file.filename}`,
+      url: `/api/files/${req.file.filename}`,
       colors,
     };
 
