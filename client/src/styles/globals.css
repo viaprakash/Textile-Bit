@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf8f0;
+    color: #2b231e;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f9eddb;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c5baa6;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ae9c83;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-textile-600 hover:bg-textile-700 text-white font-medium py-2.5 px-6 rounded-xl transition-all duration-300 shadow-textile hover:shadow-textile-lg active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-canvas-100 hover:bg-canvas-200 text-canvas-900 font-medium py-2.5 px-6 rounded-xl transition-all duration-300 border border-canvas-300 active:scale-[0.98];
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-textile p-6 border border-canvas-100;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-canvas-50 border border-canvas-200 rounded-xl text-canvas-900 font-[Poppins] text-sm focus:outline-none focus:ring-2 focus:ring-textile-400 focus:border-transparent transition-all duration-300 placeholder:text-canvas-400;
+  }
+  .label-text {
+    @apply block text-sm font-medium text-canvas-700 mb-1.5;
+  }
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/50 rounded-2xl shadow-lg;
+  }
+  .fabric-bg {
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(197,186,166,0.1) 19px, rgba(197,186,166,0.1) 20px),
+      repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(197,186,166,0.1) 19px, rgba(197,186,166,0.1) 20px);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #a64e23, #c86628, #d67d33);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
